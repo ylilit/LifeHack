@@ -1,5 +1,11 @@
 <resources>
+
     <string name="app_name">LifeHack</string>
-    <string name="action_settings">Settings</string>
+
     <string name="title_activity_login">Login</string>
+    <string name="title_activity_main">Main</string>
+
+    <string name="menu_action_settings">Settings</string>
+    <string name="menu_action_sign_out">Sign out</string>
+
 </resources>
