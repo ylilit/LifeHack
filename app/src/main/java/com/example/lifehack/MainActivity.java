@@ -53,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.menu_action_contact_us) {
+            return true;
+        }
+
+        if (id == R.id.menu_action_about) {
+            return true;
+        }
+
         if (id == R.id.menu_action_sign_out) {
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(this, Login.class);
