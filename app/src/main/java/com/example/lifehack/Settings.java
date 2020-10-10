@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import java.util.Locale;
+import java.util.Set;
 
 public class Settings extends AppCompatActivity {
 
@@ -27,6 +28,15 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.menu_action_settings);
+        toolbar.setNavigationIcon(R.drawable.back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Settings.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         setSupportActionBar(toolbar);
 
         ImageView il = findViewById(R.id.settings_ImageView_IL);

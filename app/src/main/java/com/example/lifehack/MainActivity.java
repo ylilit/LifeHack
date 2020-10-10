@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.menu_action_settings) {
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
+            finish();
         }
 
         if (id == R.id.menu_action_contact_us) {
