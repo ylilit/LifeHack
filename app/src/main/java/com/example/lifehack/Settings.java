@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
 import android.util.DisplayMetrics;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -29,19 +30,10 @@ public class Settings extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.menu_action_settings);
         toolbar.setNavigationIcon(R.drawable.back);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(Settings.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
         setSupportActionBar(toolbar);
 
         ImageView il = findViewById(R.id.settings_ImageView_IL);
         ImageView us = findViewById(R.id.settings_ImageView_US);
-
         il.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.flag_il));
         us.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.flag_us));
 
@@ -58,6 +50,18 @@ public class Settings extends AppCompatActivity {
                 setLocale("en");
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                Intent intent = new Intent(Settings.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     void setLocale(String language){
