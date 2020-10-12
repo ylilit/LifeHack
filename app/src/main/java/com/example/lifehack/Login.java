@@ -1,5 +1,7 @@
 package com.example.lifehack;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,6 +66,7 @@ public class Login extends AppCompatActivity {
                 signIn();
             }
         });
+
     }
 
     @Override
@@ -79,6 +82,8 @@ public class Login extends AppCompatActivity {
             finish();
         }
     }
+
+
 
     private void signIn() {
         SignInButton googleLoginButton = findViewById(R.id.sign_in_button);

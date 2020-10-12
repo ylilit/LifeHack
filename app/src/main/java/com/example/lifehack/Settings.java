@@ -1,6 +1,8 @@
 package com.example.lifehack;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -13,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.View;
@@ -65,16 +68,18 @@ public class Settings extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    void setLocale(String language){
+    private void setLocale(String language){
         Locale locale = new Locale(language);
+        Locale.setDefault(locale);
         Resources res = getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
         conf.setLocale(locale);
         res.updateConfiguration(conf, dm);
 
-        Intent refresh = new Intent(this, MainActivity.class);
+        Intent refresh = getIntent();
         finish();
         startActivity(refresh);
     }
+
 }

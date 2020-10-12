@@ -17,8 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/sign_in_button"
+            android:layout_marginBottom="-140dp"
+            app:srcCompat="@drawable/pic" />
+
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            android:layout_marginTop="100dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
