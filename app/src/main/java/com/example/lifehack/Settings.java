@@ -30,6 +30,7 @@ public class Settings extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.menu_action_settings);
         toolbar.setNavigationIcon(R.drawable.back);
+        toolbar.getNavigationIcon().setAutoMirrored(true);
         setSupportActionBar(toolbar);
 
         ImageView il = findViewById(R.id.settings_ImageView_IL);
@@ -71,6 +72,7 @@ public class Settings extends AppCompatActivity {
         Configuration conf = res.getConfiguration();
         conf.setLocale(locale);
         res.updateConfiguration(conf, dm);
+
         Intent refresh = new Intent(this, MainActivity.class);
         finish();
         startActivity(refresh);
